@@ -4,26 +4,6 @@ const result = document.getElementById("search-result");
 
 const api = "https://api.lyrics.ovh";
 
-
-form.addEventListener("submit",e => {
-	e.preventDefault();
-	let searchValue = search.value.trim();
-
-	if(!searchValue) {
-		alert("please input the search field");
-	} else {
-		getResult(searchValue);
-	}
-})
-
-
-async function getResult(searchValue) {
-	const searchResult = await fetch (`${api}/suggest/${searchValue}`);
-	const links= await searchResult.json();
-    // console.log(data);
-	 showData(links);
-}
-
 function showData(links) {
 	result.innerHTML = `
 	<ul class="lyrics">
@@ -39,6 +19,27 @@ function showData(links) {
 	`;
 }
 
+async function getResult(searchValue) {
+	const searchResult = await fetch (`${api}/suggest/${searchValue}`);
+	const links= await searchResult.json();
+	showData(links);
+}
+
+async function getLyrics(artist , songTitle) {
+	const response = await fetch(`${api}/v1/${artist}/${songTitle}`);
+	const data = await response.json();
+	const lyrics = data.lyrics;
+    if (lyrics === undefined){
+        alert("Lyrics don't exist in this api");
+        console.log("Lyrics don't exist in this api");
+    }
+
+	result.innerHTML = `<h2 id="lyricsHead"><strong>${songTitle}</strong> - ${artist}</h2>
+	
+	<p id="lyrics-display">${lyrics}</p>`;
+
+}	
+
 result.addEventListener("click",x => {
 	const clickedButton = x.target;
 
@@ -50,17 +51,13 @@ result.addEventListener("click",x => {
 	} 
 })
 
-async function getLyrics(artist , songTitle) {
-	const response = await fetch(`${api}/v1/${artist}/${songTitle}`);
-	const data = await response.json();
-	const lyrics = data.lyrics
-    if (lyrics === undefined){
-        alert("Lyrics don't exist in this api");
-        console.log("Lyrics don't exist in this api");
-    }
+form.addEventListener("submit",x => {
+	x.preventDefault();
+	let searchValue = search.value.trim();
 
-	result.innerHTML = `<h2 id="lyricsHead"><strong>${songTitle}</strong> - ${artist}</h2>
-	
-	<p id="lyrics-display">${lyrics}</p>`;
-
-}	
+	if(!searchValue) {
+		alert("please input the search field");
+	} else {
+		getResult(searchValue);
+	}
+})
