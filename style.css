@@ -15,7 +15,7 @@ body {
     margin: 0 auto;
 }
 ::placeholder {
-    color:aqua;
+    color:rgb(77, 79, 79);
 }
 
 .welcome {
@@ -52,12 +52,13 @@ form {
 #search {
     background-color: transparent;
     color: #cfb687;
-    height: 30px;
-    width: 64%;
-    margin: 0 auto;
-    padding-right: 2 rem;
+    height: 40px;
+    width: 65%;
+    margin: 50 auto;
     font-size: 16px;
-    border-bottom: 1px solid #cfb687;
+    border-bottom: 2px solid #000000;
+    border-left: 2px solid #000000;
+    border-right: 2px solid #000000;
 }
 
 .lyrics li {
