@@ -1,0 +1,128 @@
+html{
+    box-sizing: border-box;
+}
+
+*,*:before,*:after {
+	margin:0;
+	padding: 0;
+	box-sizing: inherit;
+	
+}
+
+body {
+    background: #88d5a3;
+}
+
+.container {
+    margin: 0 auto;
+    /* padding: rem 0; */
+} 
+
+::placeholder {
+    color: rgb(0, 0, 0);
+}
+
+.welcome {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 2rem 0;
+    color: rgb(0, 0, 0)
+}
+
+h1 {
+    text-align: center;
+    padding: 1rem 0;
+    font-style: italic;
+}
+
+h2 {
+    text-align: center;
+    padding: 1rem 0;
+    font-style: italic;
+} 
+
+
+#lyricsHead {
+    color: rgb(0, 0, 0);
+}
+
+#lyrics-search {
+    text-align: center;
+    align-items: center;
+    margin:  20px;
+    padding: 20px;
+}
+
+form {
+    margin: 0 auto;
+    padding-left: 10rem;
+}
+
+#lyricSearch {
+    background-color: transparent;
+    color: #000000;
+    outline: none;
+    height: 30px;
+    width: 64%;
+    margin: 0 auto;
+    padding-right: 2rem;
+    font-size: 16px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    outline-style: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom:1px solid #000000;
+}
+
+.lyrics {
+    width: 70%;
+    list-style: none;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.lyrics li {
+    font-size: 1.4rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+    border-bottom: 1px solid  rgb(59, 58, 52);
+}
+
+.lyrics li span {
+    font-size: 1.4rem;
+    padding: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.lyrics li span:hover {
+    background-color: rgb(165, 226, 198);
+}
+
+
+#copy-lyrics {
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    outline: none;
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+}
+
+#lyrics-display {
+    color: rgb(34, 151, 193);
+    font-size: 1.4rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0;
+}
